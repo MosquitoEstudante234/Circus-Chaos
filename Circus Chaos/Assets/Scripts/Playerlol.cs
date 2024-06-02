@@ -18,5 +18,9 @@ public class Playerlol : MonoBehaviour
     void Update()
     {
         //agent.SetDestination(target.position);
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            print("Cheguei");
+        }
     }
 }
