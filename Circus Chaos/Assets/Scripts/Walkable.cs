@@ -22,7 +22,7 @@ public class Walkable : MonoBehaviour
     {
         Vector3 finalPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         finalPosition.z = 0;
-        Destroy(Instantiate(arrowTarget, finalPosition, arrowTarget.transform.rotation), 2);
+        Destroy(Instantiate(arrowTarget, finalPosition, arrowTarget.transform.rotation), 0.2f);
         agent.SetDestination(finalPosition);
     }
 }
