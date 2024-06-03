@@ -7,12 +7,8 @@ public class HP : MonoBehaviour
     public static int Hearts = 3;
     void Start()
     {
-        
+        Hearts = 3;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

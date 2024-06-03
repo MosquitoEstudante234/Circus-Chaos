@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrefabSpawner : MonoBehaviour
+public class SpawnPrefabs : MonoBehaviour
 {
     public GameObject prefab;
     public Vector2 spawnAreaMin = new Vector2(-100, -100);
@@ -11,10 +11,17 @@ public class PrefabSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnPrefabs();
+        StartCoroutine(Spawns());
     }
 
-    void SpawnPrefabs()
+    public IEnumerator Spawns()
+    {
+        PrefabSpawner();
+        yield return new WaitForSeconds(10);
+        StartCoroutine(Spawns());
+    }
+
+    void PrefabSpawner()
     {
         for (int i = 0; i < spawnCount; i++)
         {
