@@ -13,9 +13,9 @@ public class ClownSpawner : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
             StartCoroutine(SpawnAfterDelay(5f));
         }
@@ -23,7 +23,7 @@ public class ClownSpawner : MonoBehaviour
 
     private IEnumerator SpawnAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(3f);
 
         Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
     }

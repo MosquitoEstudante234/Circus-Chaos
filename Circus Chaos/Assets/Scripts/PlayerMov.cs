@@ -14,6 +14,13 @@ public class PlayerMov : MonoBehaviour
     {
         movement.y = Input.GetAxisRaw("Vertical");
         movement.x = Input.GetAxisRaw("Horizontal");
+        if (gameObject.transform.childCount > 1)
+        {
+            foreach(Transform Child in gameObject.transform)
+            {
+                Destroy(Child.gameObject);
+            }
+        }
     }
     void FixedUpdate()
     {
