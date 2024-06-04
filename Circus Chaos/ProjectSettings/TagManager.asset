@@ -39,15 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Ground
     uniqueID: 2941538835
     locked: 0
   - name: Obstacles
     uniqueID: 1581088253
     locked: 0
+  - name: NPCs
+    uniqueID: 3788835375
+    locked: 0
   - name: Characters
     uniqueID: 3866194371
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
