@@ -14,7 +14,7 @@ public class AngerMeter : MonoBehaviour
     
     void Update()
     {
-        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     IEnumerator Anger()
