@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Playerlol : MonoBehaviour
 {
     NavMeshAgent agent;
-    public Transform target;
+    //public Transform target;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
