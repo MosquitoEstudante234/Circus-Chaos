@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D body;
     public FixedJoystick joystick;
 
-    public float speed = 5;
+    public static float speed = 5;
 
     public static float direction;
 
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         posPlayer = transform;
         body = GetComponent<Rigidbody2D>();
+        speed = 5;
     }
 
     void Update()

@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+        PlayerMovement.speed = 0;
     }
 
     public void DisplayNextSentence()
@@ -62,6 +63,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        PlayerMovement.speed = 5;
     }
 
 }
