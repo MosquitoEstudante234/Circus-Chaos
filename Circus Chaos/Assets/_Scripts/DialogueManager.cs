@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        PlayerMovement.speed = 5;
+        PlayerMovement.speed = 3;
     }
 
 }
