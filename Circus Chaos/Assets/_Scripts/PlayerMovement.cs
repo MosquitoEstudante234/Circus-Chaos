@@ -38,11 +38,11 @@ public class PlayerMovement : MonoBehaviour
             direction = joystick.Horizontal;
         }
 
-        if (joystick.Horizontal < 0)
+        if (joystick.Horizontal > 0)
         {
             spriteRenderer.flipX = true;
         }
-        if (joystick.Horizontal > 0)
+        if (joystick.Horizontal < 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -60,5 +60,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
+
+        animator.SetFloat("Horizontal", joystick.Horizontal);
+        animator.SetFloat("Vertical", joystick.Vertical);
     }
 }
