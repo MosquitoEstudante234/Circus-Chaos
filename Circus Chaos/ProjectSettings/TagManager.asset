@@ -63,3 +63,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sobre
+    uniqueID: 555370669
+    locked: 0
