@@ -7,7 +7,10 @@ public class LoadBalloonMiniGame : MonoBehaviour
     public GameObject Panel;
     public void OpenPanel()
     {
-        Panel.SetActive(true);
+        if ((Input.GetKey(KeyCode.Mouse0)))
+        {
+            Panel.SetActive(true);
+        }
     }
     
     
@@ -16,6 +19,6 @@ public class LoadBalloonMiniGame : MonoBehaviour
     
     private void OnMouseOver()
     {
-        OpenPanel();
+            OpenPanel();
     }
 }
