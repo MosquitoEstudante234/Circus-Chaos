@@ -11,7 +11,7 @@ public class EndBallonGame : MonoBehaviour
      
     public void Start()
     {
-        StartCoroutine("Tempo");
+        StartCoroutine("Begin");
     }
     private void Update()
     {
@@ -30,6 +30,11 @@ public class EndBallonGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         timer--;
+        StartCoroutine("Tempo");
+    }
+    public IEnumerator Begin()
+    {
+        yield return new WaitForSeconds(5);
         StartCoroutine("Tempo");
     }
 }
