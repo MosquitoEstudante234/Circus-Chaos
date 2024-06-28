@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public Text scoreTxt;
+    public TMP_Text scoreTxt;
     public static int score;
     private void Start()
     {
