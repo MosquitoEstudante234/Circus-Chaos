@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-    public GameObject objetoPrefab;  // Prefab do objeto a ser spawnado
+    public GameObject objetoPrefab;  // Prefab da marmota
+    public GameObject outroObjetoPrefab;  // Novo prefab do segundo objeto
     public Transform[] spawners;     // Array de posições dos spawners
     public float tempoParaDesaparecer = 3f;  // Tempo para o objeto desaparecer se não for clicado
     public float tempoCooldown = 0.5f; // Tempo de cooldown para o próximo objeto
@@ -64,29 +65,52 @@ public class SpawnerManager : MonoBehaviour
 
         int indice = Random.Range(0, spawners.Length);  // Seleciona um spawner aleatório
 
-        if (objetoPrefab == null)
+        if (objetoPrefab == null || outroObjetoPrefab == null)
         {
             Debug.LogError("Objeto prefab não atribuído!");
             return;
         }
 
-        objetoAtual = Instantiate(objetoPrefab, spawners[indice].position, Quaternion.identity);  // Spawna o objeto
+        // Decide aleatoriamente qual prefab spawnar com 30% de chance para o outro objeto
+        bool spawnOutroObjeto = Random.value < 0.3f; // 30% de chance para o outro objeto
+        GameObject prefabParaSpawnar = spawnOutroObjeto ? outroObjetoPrefab : objetoPrefab;
 
-        Objeto objetoComponente = objetoAtual.GetComponent<Objeto>();
-        if (objetoComponente == null)
+        objetoAtual = Instantiate(prefabParaSpawnar, spawners[indice].position, Quaternion.identity);  // Spawna o objeto
+
+        // Adiciona o componente de clique adequado
+        if (prefabParaSpawnar == objetoPrefab)
         {
-            Debug.LogError("O prefab não tem o componente 'Objeto'.");
-            return;
+            Objeto objetoComponente = objetoAtual.GetComponent<Objeto>();
+            if (objetoComponente != null)
+            {
+                objetoComponente.OnObjetoClicado += ObjetoClicado;
+            }
         }
-
-        // Adiciona um listener para o evento de clique
-        objetoComponente.OnObjetoClicado += ObjetoClicado;
+        else if (prefabParaSpawnar == outroObjetoPrefab)
+        {
+            OutroObjeto outroObjetoComponente = objetoAtual.GetComponent<OutroObjeto>();
+            if (outroObjetoComponente != null)
+            {
+                outroObjetoComponente.OnOutroObjetoClicado += OutroObjetoClicado;
+            }
+        }
     }
 
     void ObjetoClicado()
     {
         if (objetoAtual != null)
         {
+            Destroy(objetoAtual);
+            objetoAtual = null; // Define objetoAtual como null após destruição
+            StartCoroutine(RespawnAfterDelay());
+        }
+    }
+
+    void OutroObjetoClicado()
+    {
+        if (objetoAtual != null)
+        {
+            Debug.Log("Perdeu");
             Destroy(objetoAtual);
             objetoAtual = null; // Define objetoAtual como null após destruição
             StartCoroutine(RespawnAfterDelay());

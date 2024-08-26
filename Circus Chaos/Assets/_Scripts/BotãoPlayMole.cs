@@ -22,5 +22,11 @@ public class BotãoPlayMole : MonoBehaviour
         {
             spawnerManager.StartCiclo();
         }
+
+        // Desativa o botão para que ele desapareça
+        if (startButton != null)
+        {
+            startButton.gameObject.SetActive(false);
+        }
     }
 }
