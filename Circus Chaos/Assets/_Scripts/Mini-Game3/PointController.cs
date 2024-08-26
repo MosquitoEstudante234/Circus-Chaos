@@ -36,7 +36,7 @@ public class PointController : MonoBehaviour
         }
 
         // Check for input
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             CheckSuccess();
         }
@@ -47,12 +47,15 @@ public class PointController : MonoBehaviour
         // Check if the pointer is within the safe zone
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
+            RandomizeSafeZone.instance.OnPlayerHitsSafeZone();
             Debug.Log("Success!");
+            ScoreMiniGameIII.score += 500;
         }
         else
         {
-            LoadOpenGame.SetActive(true);
+            //LoadOpenGame.SetActive(true);
             Debug.Log("Fail!");
+            ScoreMiniGameIII.score -= 1000;
         }
     }
 }
