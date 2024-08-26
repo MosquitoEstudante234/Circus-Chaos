@@ -9,6 +9,7 @@ public class BalancePlayer : MonoBehaviour
     public float moveSpeed = 0.001f; // Velocidade de movimento no eixo X
     public Button increaseButton;
     public Button decreaseButton;
+    public GameObject LoadMenu;
 
     private float minXPosition = 39.70f; // Limite mínimo do eixo X
     private float maxXPosition = 40.30f;  // Limite máximo do eixo X
@@ -67,6 +68,11 @@ public class BalancePlayer : MonoBehaviour
         if (zRotation >= 50 || zRotation <= -50)
         {
             Debug.Log("Caiu");
+            LoadMenu.SetActive(true);
+        }
+        if ((zRotation <= 15) && (zRotation >= -15))
+        {
+            ScoreMiniGameII.score++;
         }
     }
 
