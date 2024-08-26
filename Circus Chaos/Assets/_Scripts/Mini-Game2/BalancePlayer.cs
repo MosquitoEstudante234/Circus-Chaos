@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BalancePlayer : MonoBehaviour
 {
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 0.1f;
     public float moveSpeed = 0.001f; // Velocidade de movimento no eixo X
     public Button increaseButton;
     public Button decreaseButton;
@@ -44,16 +44,16 @@ public class BalancePlayer : MonoBehaviour
 
         // Movimento no eixo X baseado na rotação
         float moveAmount = moveSpeed * Time.deltaTime;
-        moveAmount = Mathf.Clamp(moveAmount, -0.005f, 0.005f); // Limita o movimento para evitar velocidades extremas
+        moveAmount = Mathf.Clamp(moveAmount, -0.05f, 0.05f); // Limita o movimento para evitar velocidades extremas
 
         if (zRotation >= 0)
         {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime  * 5);
             transform.position += new Vector3(-moveAmount, 0, 0); // Move para a esquerda
         }
         else if (zRotation <= -1)
         {
-            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime * 5);
             transform.position += new Vector3(moveAmount, 0, 0); // Move para a direita
         }
 
@@ -64,23 +64,19 @@ public class BalancePlayer : MonoBehaviour
 
 
         // Condições de queda
-        if (zRotation >= 50)
+        if (zRotation >= 50 || zRotation <= -50)
         {
-            Debug.Log("Caiu2");
-        }
-        if (zRotation <= -50)
-        {
-            Debug.Log("Caiu1");
+            Debug.Log("Caiu");
         }
     }
 
     public void IncreaseRotation()
     {
-        transform.Rotate(0, 0, 5f);
+        transform.Rotate(0, 0, 17f);
     }
 
     public void DecreaseRotation()
     {
-        transform.Rotate(0, 0, -5f);
+        transform.Rotate(0, 0, -17f);
     }
 }
