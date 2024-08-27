@@ -95544,7 +95544,7 @@ MonoBehaviour:
   pointA: {fileID: 3620210315153801465}
   pointB: {fileID: 3620210314940197869}
   safeZone: {fileID: 3620210314717393754}
-  moveSpeed: 1150
+  moveSpeed: 1200
   LoadOpenGame: {fileID: 0}
 --- !u!114 &3620210314633945322
 MonoBehaviour:
