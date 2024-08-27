@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class TimeToWin : MonoBehaviour
 {
+    public GameObject Map;
     public Image barTimer;
 
     [SerializeField]float runTime;
@@ -15,7 +16,7 @@ public class TimeToWin : MonoBehaviour
         timeToSpent -= runTime * Time.deltaTime;
         if(timeToSpent <= 0)
         {
-            //algo acontece
+            Map.SetActive(true);
         }
     }
 }
