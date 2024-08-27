@@ -11,12 +11,13 @@ public class BalancePlayer : MonoBehaviour
     public Button decreaseButton;
     public GameObject LoadMenu;
 
-    private float minXPosition = 39.70f; // Limite mínimo do eixo X
-    private float maxXPosition = 40.30f;  // Limite máximo do eixo X
+    private float minXPosition = 39.70f; // Limite mï¿½nimo do eixo X
+    private float maxXPosition = 40.30f;  // Limite mï¿½ximo do eixo X
+       
 
     private void Start()
     {
-        // Verifica a posição inicial para garantir que está dentro dos limites
+        // Verifica a posiï¿½ï¿½o inicial para garantir que estï¿½ dentro dos limites
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, minXPosition, maxXPosition),
             transform.position.y,
@@ -25,25 +26,26 @@ public class BalancePlayer : MonoBehaviour
 
         increaseButton.onClick.AddListener(IncreaseRotation);
         decreaseButton.onClick.AddListener(DecreaseRotation);
+        StartCoroutine(TimeBeforeGame());
     }
 
     void Update()
     {
-        float zRotation = transform.eulerAngles.z;
+        float zRotation = transform.eulerAngles.z; 
 
-        // Converte a rotação de 360 para -180 a 180 graus
+        // Converte a rotaï¿½ï¿½o de 360 para -180 a 180 graus
         if (zRotation > 180)
         {
             zRotation -= 360;
         }
 
-        // Controle da rotação
+        // Controle da rotaï¿½ï¿½o
         if (zRotation > -1 && zRotation < 1)
         {
             zRotation++;
         }
 
-        // Movimento no eixo X baseado na rotação
+        // Movimento no eixo X baseado na rotaï¿½ï¿½o
         float moveAmount = moveSpeed * Time.deltaTime;
         moveAmount = Mathf.Clamp(moveAmount, -0.05f, 0.05f); // Limita o movimento para evitar velocidades extremas
 
@@ -58,13 +60,13 @@ public class BalancePlayer : MonoBehaviour
             transform.position += new Vector3(moveAmount, 0, 0); // Move para a direita
         }
 
-        // Restringe a posição do eixo X para estar entre -0.25 e 0.25
+        // Restringe a posiï¿½ï¿½o do eixo X para estar entre -0.25 e 0.25
         float clampedX = Mathf.Clamp(transform.position.x, minXPosition, maxXPosition);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
 
 
-        // Condições de queda
+        // Condiï¿½ï¿½es de queda
         if (zRotation >= 50 || zRotation <= -50)
         {
             Debug.Log("Caiu");
@@ -84,5 +86,11 @@ public class BalancePlayer : MonoBehaviour
     public void DecreaseRotation()
     {
         transform.Rotate(0, 0, -17f);
+    }
+    public IEnumerator TimeBeforeGame()
+    {
+        zRotation = 0;
+        yield return new WaitForSeconds(5);
+
     }
 }
