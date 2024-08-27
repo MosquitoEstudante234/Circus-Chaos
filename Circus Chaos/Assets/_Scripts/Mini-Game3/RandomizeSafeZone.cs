@@ -42,7 +42,8 @@ public class RandomizeSafeZone : MonoBehaviour
         safeZone.transform.position = newPosition;
 
         // Define uma nova escala y aleatória para a safezone
-        float randomScaleY = Random.Range(-100.0f, -50.0f); // Ajuste esses valores conforme necessário
+        float randomScaleY = Random.Range(0.5f, 1f); // Ajuste esses valores conforme necessário
+
         Vector3 newScale = safeZone.transform.localScale;
         newScale.y = randomScaleY;
         safeZone.transform.localScale = newScale;
