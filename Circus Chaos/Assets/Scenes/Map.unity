@@ -2610,7 +2610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Map: {fileID: 1122288466}
-  MiniGame: {fileID: 0}
+  MiniGame: {fileID: 162643892}
   barTimer: {fileID: 1764353721}
   runTime: 0.05
   timeToSpent: 1
@@ -56280,8 +56280,8 @@ MonoBehaviour:
   Tutorial: {fileID: 2086723650}
   Minigame1: {fileID: 1197136711}
   Minigame2: {fileID: 162643892}
-  Minigame3: {fileID: 0}
-  Minigame4: {fileID: 0}
+  Minigame3: {fileID: 3620210313703593012}
+  Minigame4: {fileID: 9000659952181822874}
 --- !u!95 &1122288469
 Animator:
   serializedVersion: 5
