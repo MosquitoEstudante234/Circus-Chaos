@@ -89,7 +89,7 @@ public class BalancePlayer : MonoBehaviour
     }
     public IEnumerator TimeBeforeGame()
     {
-        zRotation = 0;
+        //transform.rotation.x = 0;
         yield return new WaitForSeconds(5);
 
     }
