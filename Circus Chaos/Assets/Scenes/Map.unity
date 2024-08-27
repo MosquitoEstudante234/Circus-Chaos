@@ -1475,6 +1475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162643893}
   - component: {fileID: 162643894}
+  - component: {fileID: 162643895}
   m_Layer: 0
   m_Name: Mini-Game2
   m_TagString: Untagged
@@ -1514,6 +1515,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 394416118}
+--- !u!114 &162643895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162643892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e055afab5b9a7448af46990c4b8f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bar: {fileID: 364273936}
+  Player: {fileID: 776746637}
 --- !u!1 &169003018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &364273937
 Transform:
   m_ObjectHideFlags: 0
@@ -51466,7 +51481,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776746638
 Transform:
   m_ObjectHideFlags: 0
@@ -86586,7 +86601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21420833, y: 0.086333334}
   m_AnchorMax: {x: 0.785, y: 0.44537038}
-  m_AnchoredPosition: {x: 1, y: -578.0001}
+  m_AnchoredPosition: {x: 1, y: -578.0003}
   m_SizeDelta: {x: -2.4799805, y: -3.9899902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1807036688

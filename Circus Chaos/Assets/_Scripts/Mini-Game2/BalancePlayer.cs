@@ -26,7 +26,6 @@ public class BalancePlayer : MonoBehaviour
 
         increaseButton.onClick.AddListener(IncreaseRotation);
         decreaseButton.onClick.AddListener(DecreaseRotation);
-        StartCoroutine(TimeBeforeGame());
     }
 
     void Update()
@@ -86,11 +85,5 @@ public class BalancePlayer : MonoBehaviour
     public void DecreaseRotation()
     {
         transform.Rotate(0, 0, -17f);
-    }
-    public IEnumerator TimeBeforeGame()
-    {
-        //transform.rotation.x = 0;
-        yield return new WaitForSeconds(5);
-
     }
 }
