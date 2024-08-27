@@ -5,16 +5,16 @@ public class SpawnerManager : MonoBehaviour
 {
     public GameObject objetoPrefab;  // Prefab da marmota
     public GameObject outroObjetoPrefab;  // Novo prefab do segundo objeto
-    public Transform[] spawners;     // Array de posições dos spawners
-    public float tempoParaDesaparecer = 3f;  // Tempo para o objeto desaparecer se não for clicado
-    public float tempoCooldown = 0.5f; // Tempo de cooldown para o próximo objeto
+    public Transform[] spawners;     // Array de posiï¿½ï¿½es dos spawners
+    public float tempoParaDesaparecer = 3f;  // Tempo para o objeto desaparecer se nï¿½o for clicado
+    public float tempoCooldown = 0.5f; // Tempo de cooldown para o prï¿½ximo objeto
 
     private GameObject objetoAtual;
     private Coroutine cicloSpawn;
 
     void Start()
     {
-        // Não inicia o ciclo de spawn automaticamente aqui
+        // Nï¿½o inicia o ciclo de spawn automaticamente aqui
     }
 
     public void StartCiclo()
@@ -29,7 +29,7 @@ public class SpawnerManager : MonoBehaviour
     {
         while (true)
         {
-            // Espera até que o objeto atual seja destruído
+            // Espera atï¿½ que o objeto atual seja destruï¿½do
             while (objetoAtual != null)
             {
                 yield return null;  // Aguarda um frame
@@ -37,19 +37,19 @@ public class SpawnerManager : MonoBehaviour
 
             if (spawners.Length == 0)
             {
-                Debug.LogError("Nenhum spawner foi atribuído!");
-                yield break; // Sai da corrotina se não houver spawners
+                Debug.LogError("Nenhum spawner foi atribuï¿½do!");
+                yield break; // Sai da corrotina se nï¿½o houver spawners
             }
 
             SpawnObjeto();
 
-            // Espera até que o objeto seja clicado ou desapareça automaticamente
+            // Espera atï¿½ que o objeto seja clicado ou desapareï¿½a automaticamente
             yield return new WaitForSeconds(tempoParaDesaparecer);
 
-            if (objetoAtual != null) // Se o objeto ainda não foi clicado
+            if (objetoAtual != null) // Se o objeto ainda nï¿½o foi clicado
             {
                 Destroy(objetoAtual);
-                objetoAtual = null; // Define objetoAtual como null após destruição
+                objetoAtual = null; // Define objetoAtual como null apï¿½s destruiï¿½ï¿½o
                 yield return new WaitForSeconds(tempoCooldown); // Tempo de cooldown ajustado para 0.5 segundos
             }
         }
@@ -59,15 +59,15 @@ public class SpawnerManager : MonoBehaviour
     {
         if (spawners.Length == 0)
         {
-            Debug.LogError("Nenhum spawner foi atribuído!");
+            Debug.LogError("Nenhum spawner foi atribuï¿½do!");
             return;
         }
 
-        int indice = Random.Range(0, spawners.Length);  // Seleciona um spawner aleatório
+        int indice = Random.Range(0, spawners.Length);  // Seleciona um spawner aleatï¿½rio
 
         if (objetoPrefab == null || outroObjetoPrefab == null)
         {
-            Debug.LogError("Objeto prefab não atribuído!");
+            Debug.LogError("Objeto prefab nï¿½o atribuï¿½do!");
             return;
         }
 
@@ -100,8 +100,9 @@ public class SpawnerManager : MonoBehaviour
     {
         if (objetoAtual != null)
         {
+            ScoreMiniGameIV.score += 500;
             Destroy(objetoAtual);
-            objetoAtual = null; // Define objetoAtual como null após destruição
+            objetoAtual = null; // Define objetoAtual como null apï¿½s destruiï¿½ï¿½o
             StartCoroutine(RespawnAfterDelay());
         }
     }
@@ -110,9 +111,10 @@ public class SpawnerManager : MonoBehaviour
     {
         if (objetoAtual != null)
         {
+            ScoreMiniGameIV.score -= 1000;
             Debug.Log("Perdeu");
             Destroy(objetoAtual);
-            objetoAtual = null; // Define objetoAtual como null após destruição
+            objetoAtual = null; // Define objetoAtual como null apï¿½s destruiï¿½ï¿½o
             StartCoroutine(RespawnAfterDelay());
         }
     }
