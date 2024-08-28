@@ -9,7 +9,8 @@ public class BalancePlayer : MonoBehaviour
     public float moveSpeed = 0.001f; // Velocidade de movimento no eixo X
     public Button increaseButton;
     public Button decreaseButton;
-    public GameObject LoadMenu;
+    public GameObject LoadMenu, LosingScreen;
+    
 
     private float minXPosition = 39.70f; // Limite m�nimo do eixo X
     private float maxXPosition = 40.30f;  // Limite m�ximo do eixo X
@@ -50,12 +51,12 @@ public class BalancePlayer : MonoBehaviour
 
         if (zRotation >= 0)
         {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime  * 5);
+            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime  * 4);
             transform.position += new Vector3(-moveAmount, 0, 0); // Move para a esquerda
         }
         else if (zRotation <= -1)
         {
-            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime * 5);
+            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime * 4);
             transform.position += new Vector3(moveAmount, 0, 0); // Move para a direita
         }
 
@@ -75,15 +76,22 @@ public class BalancePlayer : MonoBehaviour
         {
             ScoreMiniGameII.score++;
         }
+        if ((zRotation <= 25) && (zRotation >= -25))
+        {
+            LosingScreen.SetActive(false);
+        } else
+        {
+            LosingScreen.SetActive(true);
+        }
     }
 
     public void IncreaseRotation()
     {
-        transform.Rotate(0, 0, 17f);
+        transform.Rotate(0, 0, 15f);
     }
 
     public void DecreaseRotation()
     {
-        transform.Rotate(0, 0, -17f);
+        transform.Rotate(0, 0, -15f);
     }
 }
