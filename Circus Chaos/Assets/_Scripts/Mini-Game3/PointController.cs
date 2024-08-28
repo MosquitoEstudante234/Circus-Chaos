@@ -11,6 +11,7 @@ public class PointController : MonoBehaviour
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
     public GameObject LoadOpenGame;
+    public Animator animator;
 
     void Start()
     {
@@ -50,12 +51,14 @@ public class PointController : MonoBehaviour
             RandomizeSafeZone.instance.OnPlayerHitsSafeZone();
             Debug.Log("Success!");
             ScoreMiniGameIII.score += 500;
+            animator.SetTrigger("Hit");
         }
         else
         {
             //LoadOpenGame.SetActive(true);
             Debug.Log("Fail!");
             ScoreMiniGameIII.score -= 1000;
+            animator.SetTrigger("Miss");
         }
     }
 }
