@@ -104,6 +104,7 @@ public class SpawnerManager : MonoBehaviour
             Destroy(objetoAtual);
             objetoAtual = null; // Define objetoAtual como null ap�s destrui��o
             StartCoroutine(RespawnAfterDelay());
+            FindObjectOfType<AudioManager>().Play("BonkSoundEffect");
         }
     }
 
@@ -116,6 +117,7 @@ public class SpawnerManager : MonoBehaviour
             Destroy(objetoAtual);
             objetoAtual = null; // Define objetoAtual como null ap�s destrui��o
             StartCoroutine(RespawnAfterDelay());
+            FindObjectOfType<AudioManager>().Play("BoomSoundEffect");
         }
     }
 

@@ -52,6 +52,8 @@ public class PointController : MonoBehaviour
             Debug.Log("Success!");
             ScoreMiniGameIII.score += 500;
             animator.SetTrigger("Hit");
+            FindObjectOfType<AudioManager>().Play("HitSucess");
+            FindObjectOfType<AudioManager>().Play("PunchSucess");
         }
         else
         {
@@ -59,6 +61,7 @@ public class PointController : MonoBehaviour
             Debug.Log("Fail!");
             ScoreMiniGameIII.score -= 1000;
             animator.SetTrigger("Miss");
+            FindObjectOfType<AudioManager>().Play("HitFailure");
         }
     }
 }

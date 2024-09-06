@@ -16,6 +16,7 @@ public class BalloonExplosion : MonoBehaviour
         {
             Destroy(gameObject);
             Score.score += 250;
+            FindObjectOfType<AudioManager>().Play("BalloonPop");
         }
         
     }
