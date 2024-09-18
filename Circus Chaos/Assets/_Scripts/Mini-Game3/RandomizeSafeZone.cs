@@ -6,9 +6,9 @@ public class RandomizeSafeZone : MonoBehaviour
 {
     public static RandomizeSafeZone instance;
 
-    public GameObject pointA; // Referência ao Ponto A
-    public GameObject pointB; // Referência ao Ponto B
-    public GameObject safeZone; // Referência à SafeZone
+    public GameObject pointA; 
+    public GameObject pointB; 
+    public GameObject safeZone; 
 
     private void Awake()
     {
@@ -17,32 +17,29 @@ public class RandomizeSafeZone : MonoBehaviour
 
     void Start()
     {
-        // Inicia a safezone em uma posição e escala aleatória dentro dos limites
         RandomizerSafeZone();
     }
 
     public void OnPlayerHitsSafeZone()
     {
-        // Quando o player acerta a safezone
+       
         RandomizerSafeZone();
     }
 
     void RandomizerSafeZone()
     {
-        // Obtém as posições y dos pontos A e B
+        
         float minY = pointA.transform.position.y;
         float maxY = pointB.transform.position.y;
 
-        // Calcula uma nova posição y aleatória dentro dos limites
         float randomY = Random.Range(minY, maxY);
 
-        // Define a nova posição y da safezone
         Vector3 newPosition = safeZone.transform.position;
         newPosition.y = randomY;
         safeZone.transform.position = newPosition;
 
-        // Define uma nova escala y aleatória para a safezone
-        float randomScaleY = Random.Range(0.5f, 1f); // Ajuste esses valores conforme necessário
+
+        float randomScaleY = Random.Range(0.5f, 1f); 
 
         Vector3 newScale = safeZone.transform.localScale;
         newScale.y = randomScaleY;

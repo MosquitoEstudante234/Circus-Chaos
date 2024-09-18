@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PointController : MonoBehaviour
 {
-    public Transform pointA; // Reference to the starting point
-    public Transform pointB; // Reference to the ending point
-    public RectTransform safeZone; // Reference to the safe zone RectTransform
-    public float moveSpeed = 100f; // Speed of the pointer movement
+    public Transform pointA; 
+    public Transform pointB; 
+    public RectTransform safeZone; 
+    public float moveSpeed = 100f; 
 
-    private float direction = 1f; // 1 for moving towards B, -1 for moving towards A
+    private float direction = 1f;
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
     public GameObject LoadOpenGame;
@@ -21,10 +21,8 @@ public class PointController : MonoBehaviour
 
     void Update()
     {
-        // Move the pointer towards the target position
         pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Change direction if the pointer reaches one of the points
         if (Vector3.Distance(pointerTransform.position, pointA.position) < 0.1f)
         {
             targetPosition = pointB.position;
@@ -36,7 +34,6 @@ public class PointController : MonoBehaviour
             direction = -1f;
         }
 
-        // Check for input
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             CheckSuccess();
@@ -45,7 +42,6 @@ public class PointController : MonoBehaviour
 
     void CheckSuccess()
     {
-        // Check if the pointer is within the safe zone
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
             RandomizeSafeZone.instance.OnPlayerHitsSafeZone();
