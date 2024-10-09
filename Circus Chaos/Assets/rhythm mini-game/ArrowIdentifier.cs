@@ -78,7 +78,7 @@ public class ArrowIdentifier : MonoBehaviour
     {
         if (arrowBool[0])
         {
-            if (Input.GetButtonDown("ArrowLeft"))
+            if (Input.GetMouseButton(0))
             {
                 arrowAudio[0].Play();
                 switch (qualityCode[0].whatCollision)
@@ -100,7 +100,7 @@ public class ArrowIdentifier : MonoBehaviour
 
         if (arrowBool[1])
         {
-            if (Input.GetButtonDown("ArrowRight"))
+            if (Input.GetMouseButton(0))
             {
                 arrowAudio[1].Play();
                 switch (qualityCode[1].whatCollision)
@@ -121,7 +121,7 @@ public class ArrowIdentifier : MonoBehaviour
         }
         if (arrowBool[2])
         {
-            if (Input.GetButtonDown("ArrowUp"))
+            if (Input.GetMouseButton(0))
             {
                 arrowAudio[2].Play();
                 switch (qualityCode[2].whatCollision)
@@ -142,7 +142,7 @@ public class ArrowIdentifier : MonoBehaviour
         }
         if (arrowBool[3])
         {
-            if (Input.GetButtonDown("ArrowDown"))
+            if (Input.GetMouseButton(0))
             {
                 arrowAudio[3].Play();
                 switch (qualityCode[3].whatCollision)
