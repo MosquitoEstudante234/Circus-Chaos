@@ -1,8 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ArrowIdentifier : MonoBehaviour
 {
+    public GameObject Erro;
+    public GameObject Acerto;
+
     public UnityEvent ArrowButton;
 
     public GameObject _arrow;
@@ -11,18 +15,29 @@ public class ArrowIdentifier : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!HasAnArrowInside)
+        if(HasAnArrowInside)
         {
-            return;
+            ArrowButton.Invoke();
+            Acerto.SetActive(true);
+            StartCoroutine(DesactivateError());
         }
-        ArrowButton.Invoke();
+        else
+        {
+            print("errou bobão");
+            Erro.SetActive(true);
+            StartCoroutine(DesactivateError());
+        }
     }
-
+    IEnumerator DesactivateError()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Erro.SetActive(false);
+        Acerto.SetActive(false);
+    }
     public void DestroyArrow()
     {
         Destroy(_arrow);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 3)
