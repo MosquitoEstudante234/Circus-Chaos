@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3942315730060565755}
   - component: {fileID: 6873736297680289985}
   - component: {fileID: 3852596286564724778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlueArrow
   m_TagString: ArrowBlue
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10289b8e3309e44a9fd1fea56be44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowFallSpeed: 0.5
+  arrowFallSpeed: 0.1
   whatCollision: 0
 --- !u!61 &3942315730060565754
 BoxCollider2D:

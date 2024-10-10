@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7368632822948213586}
   - component: {fileID: 6892495036073276546}
   - component: {fileID: 3297316935334228519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RedArrow
   m_TagString: ArrowRed
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10289b8e3309e44a9fd1fea56be44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowFallSpeed: 0.5
+  arrowFallSpeed: 0.1
   whatCollision: 0
 --- !u!61 &7368632822948213587
 BoxCollider2D:
