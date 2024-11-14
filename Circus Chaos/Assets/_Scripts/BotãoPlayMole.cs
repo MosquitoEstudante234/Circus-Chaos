@@ -15,7 +15,7 @@ public class BotãoPlayMole : MonoBehaviour
         }
     }
 
-    void IniciarJogo()
+    public void IniciarJogo()
     {
         // Verifica se o SpawnerManager foi atribuído e inicia o ciclo de spawn
         if (spawnerManager != null)
