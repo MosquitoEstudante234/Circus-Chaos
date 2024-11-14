@@ -27,7 +27,12 @@ public class LoadingEvents : MonoBehaviour
         SceneManager.LoadScene("Map");
  
    }
-   public void Deactivate()
+    public void LoadTuto()
+    {
+        SceneManager.LoadScene("Tutorial");
+
+    }
+    public void Deactivate()
    {
     gameObject.SetActive(false);
    }
