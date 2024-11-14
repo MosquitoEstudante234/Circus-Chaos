@@ -6,7 +6,7 @@ public class LoadScenes : MonoBehaviour
 {
     public void CenaUm()
     {
-
+        
     }
     public void CenaDois()
     {
