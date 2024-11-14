@@ -1,39 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadingEvents : MonoBehaviour
 {
-    public GameObject Map, Tutorial, Minigame1, Minigame2, Minigame3, Minigame4;
    
    public void LoadMinigameOne()
    {
-    Map.SetActive(false);
-    Minigame1.SetActive(true);
-   }
+        SceneManager.LoadScene("MiniGame1");
+    }
    public void LoadMinigameTwo()
    {
-    Map.SetActive(false);
-    Minigame2.SetActive(true);
-   }
+        SceneManager.LoadScene("MiniGame2");
+    }
    public void LoadMinigameThree()
    {
-    Map.SetActive(false);
-    Minigame3.SetActive(true);
-   }
+        SceneManager.LoadScene("MiniGame3");
+    }
    public void LoadMinigameFour()
    {
-    Map.SetActive(false);
-    Minigame4.SetActive(true);
-   }
+        SceneManager.LoadScene("MiniGame4");
+    }
    public void LoadMap()
    {
-    Map.SetActive(true);
-    Tutorial.SetActive(false);
-    Minigame1.SetActive(false);
-    Minigame2.SetActive(false);
-    Minigame3.SetActive(false);
-    Minigame4.SetActive(false);
+        SceneManager.LoadScene("Map");
  
    }
    public void Deactivate()
