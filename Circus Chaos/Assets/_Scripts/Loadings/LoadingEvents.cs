@@ -22,7 +22,11 @@ public class LoadingEvents : MonoBehaviour
    {
         SceneManager.LoadScene("MiniGame4");
     }
-   public void LoadMap()
+    public void LoadMinigameFive()
+    {
+        SceneManager.LoadScene("MiniGame5");
+    }
+    public void LoadMap()
    {
         SceneManager.LoadScene("Map");
  

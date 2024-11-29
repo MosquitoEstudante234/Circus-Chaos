@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/CenasMiniGames/MiniGame4.unity
     guid: fd76120179e7ccf4ea856be5c9211b58
   - enabled: 1
+    path: Assets/_Scenes/CenasMiniGames/MiniGame5.unity
+    guid: 6fddf70dd9800f24aa477574a3a49e52
+  - enabled: 1
     path: Assets/_Scenes/CenasMiniGames/Tutorial.unity
     guid: 8de4e34d805708c48a41855bee1f1d5d
   m_configObjects: {}

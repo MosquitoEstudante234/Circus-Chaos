@@ -17,15 +17,19 @@ public class ArrowIdentifier : MonoBehaviour
     {
         if(HasAnArrowInside)
         {
+            ScoreMiniGameV.score += 300;
             ArrowButton.Invoke();
             Acerto.SetActive(true);
             StartCoroutine(DesactivateError());
+            
         }
         else
         {
+            ScoreMiniGameV.score -= 150;
             print("errou bobão");
             Erro.SetActive(true);
             StartCoroutine(DesactivateError());
+            
         }
     }
     IEnumerator DesactivateError()
