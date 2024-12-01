@@ -46,8 +46,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // Implement a method to execute when the user clicks the button:
     public void ShowAd()
     {
+        LoadAd();
         // Disable the button:
-        //_showAdButton.interactable = false;
+        _showAdButton.interactable = false;
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
     }
