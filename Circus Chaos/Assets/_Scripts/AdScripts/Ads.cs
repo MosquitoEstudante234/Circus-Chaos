@@ -13,7 +13,7 @@ public class Ads : MonoBehaviour, IUnityAdsInitializationListener
     void Start()
     {
 
-        Advertisement.Initialize("SuaIDAqui", _testMode, this);
+        Advertisement.Initialize("5741717", _testMode, this);
     }
 
     // Update is called once per frame
