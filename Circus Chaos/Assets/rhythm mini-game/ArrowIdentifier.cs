@@ -20,6 +20,7 @@ public class ArrowIdentifier : MonoBehaviour
     {
         if(HasAnArrowInside)
         {
+            FindObjectOfType<AudioManager>().Play("Hit");
             Animator.SetTrigger(nomezinho);
             ScoreMiniGameV.score += 300;
             ArrowButton.Invoke();
@@ -29,6 +30,7 @@ public class ArrowIdentifier : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("MissHit");
             Animator.SetTrigger("Miss");
             ScoreMiniGameV.score -= 150;
             print("errou bobão");
