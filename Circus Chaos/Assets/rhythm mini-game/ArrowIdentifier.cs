@@ -4,6 +4,9 @@ using UnityEngine.Events;
 
 public class ArrowIdentifier : MonoBehaviour
 {
+    public Animator Animator;
+    public string nomezinho;
+
     public GameObject Erro;
     public GameObject Acerto;
 
@@ -17,6 +20,7 @@ public class ArrowIdentifier : MonoBehaviour
     {
         if(HasAnArrowInside)
         {
+            Animator.SetTrigger(nomezinho);
             ScoreMiniGameV.score += 300;
             ArrowButton.Invoke();
             Acerto.SetActive(true);
@@ -25,6 +29,7 @@ public class ArrowIdentifier : MonoBehaviour
         }
         else
         {
+            Animator.SetTrigger("Miss");
             ScoreMiniGameV.score -= 150;
             print("errou bobão");
             Erro.SetActive(true);

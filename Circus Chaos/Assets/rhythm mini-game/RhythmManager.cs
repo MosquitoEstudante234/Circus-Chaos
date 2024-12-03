@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RhythmManager : MonoBehaviour
 {
+    public Animator player;
+
     [SerializeField] float spawnTime;
     [SerializeField] bool isPlaying;
 
@@ -34,7 +36,9 @@ public class RhythmManager : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnTime);
             randomArrow = Random.Range(0, arrowsSong.Length);
-            Instantiate(arrowsSong[randomArrow]);
+            var arrow = Instantiate(arrowsSong[randomArrow]);
+            arrow.GetComponent<ArrowFall>().Animator = player;
+
         }
     }
 }

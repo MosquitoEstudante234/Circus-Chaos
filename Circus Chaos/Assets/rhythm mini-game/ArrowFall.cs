@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArrowFall : MonoBehaviour
 {
+    public Animator Animator;
     public enum WhatCollision
     {
         Bad, Good, Sick
@@ -16,6 +17,10 @@ public class ArrowFall : MonoBehaviour
     private void Awake()
     {
         arrowTransfomr = GetComponent<Transform>();
+    }
+    public void Start()
+    {
+        StartCoroutine(Destroy());
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -39,7 +44,9 @@ public class ArrowFall : MonoBehaviour
     }
     IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2.5f);
+        ScoreMiniGameV.score -= 150;
+        Animator.SetTrigger("Miss");
         Destroy(gameObject);
     }
 }
