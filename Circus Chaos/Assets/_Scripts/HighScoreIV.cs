@@ -9,7 +9,7 @@ public class HighScoreIV : MonoBehaviour
 
     public static float ScoreFinal;
     public TMP_Text ScoreFinalTxt;
-
+    public GameObject Trophy;
 
 
     public void Awake()
@@ -22,7 +22,11 @@ public class HighScoreIV : MonoBehaviour
     }
     void Start()
     {
-        ScoreFinalTxt.text = ScoreFinal.ToString();;
+        ScoreFinalTxt.text = ScoreFinal.ToString();
+        if (ScoreFinal >= 7500)
+        {
+            Trophy.SetActive(true);
+        }
     }
 
 

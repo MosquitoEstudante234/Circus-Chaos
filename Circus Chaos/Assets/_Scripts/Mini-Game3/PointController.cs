@@ -5,7 +5,7 @@ public class PointController : MonoBehaviour
     public Transform pointA; 
     public Transform pointB; 
     public RectTransform safeZone; 
-    public float moveSpeed = 100f; 
+    public float moveSpeed = 25f; 
 
     private float direction = 1f;
     private RectTransform pointerTransform;
