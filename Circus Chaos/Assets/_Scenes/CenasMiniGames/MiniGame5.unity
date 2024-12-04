@@ -853,7 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Hit
-    clip: {fileID: 8300000, guid: e2e59aee1a7157448a387e70a51a5c29, type: 3}
+    clip: {fileID: 8300000, guid: 65b7b59610f4f7347b0f77297b97d474, type: 3}
     volume: 1
     pitch: 2
     loop: 0

@@ -11,7 +11,7 @@ public class HighScore : MonoBehaviour
     public TMP_Text ScoreFinalTxt;
     public GameObject Trophy;
 
-
+    bool finished;
 
     public void Awake()
     {
@@ -25,9 +25,14 @@ public class HighScore : MonoBehaviour
     {
         ScoreFinalTxt.text = ScoreFinal.ToString();
         
-        if (ScoreFinal >= 6000)
+        if (ScoreFinal >= 5000)
         {
             Trophy.SetActive(true);
+            if (!finished)
+            {
+                EndScreen.instance.DetectEnd();
+            }
+            finished = true;
         }
     }
 

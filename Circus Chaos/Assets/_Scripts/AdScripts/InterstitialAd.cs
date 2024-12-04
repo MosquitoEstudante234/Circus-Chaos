@@ -18,7 +18,12 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     }
     public void Start()
     {
-        ShowAd();
+        var AdChance = Random.Range(0,101);
+        if(AdChance <= 50)
+        {
+            ShowAd();
+        }
+        
     }
     // Load content to the Ad Unit:
     public void LoadAd()
