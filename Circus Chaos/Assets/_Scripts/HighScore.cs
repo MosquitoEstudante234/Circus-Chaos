@@ -25,7 +25,7 @@ public class HighScore : MonoBehaviour
     {
         ScoreFinalTxt.text = ScoreFinal.ToString();
         
-        if (ScoreFinal >= 5000)
+        if (ScoreFinal >= 6000)
         {
             Trophy.SetActive(true);
         }
