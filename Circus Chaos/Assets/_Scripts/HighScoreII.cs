@@ -25,7 +25,7 @@ public class HighScoreII : MonoBehaviour
     void Start()
     {
         ScoreFinalTxt.text = ScoreFinal.ToString();
-        if (ScoreFinal >= 4000)
+        if (ScoreFinal >= 3250)
         {
             Trophy.SetActive(true);
             if (!finished)
