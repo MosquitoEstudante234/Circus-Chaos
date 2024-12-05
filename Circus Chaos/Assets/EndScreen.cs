@@ -10,6 +10,7 @@ public class EndScreen : MonoBehaviour
     {
         instance = this;
     }
+
     public void DetectEnd()
     {
         if(WonMinigames >= 5)
